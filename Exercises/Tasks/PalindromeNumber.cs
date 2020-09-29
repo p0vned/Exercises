@@ -4,6 +4,8 @@ namespace Exercises.Tasks
 {
     public static class PalindromeNumber
     {
+        // Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.
+
         public static bool Solution(int x)
         {
             if (x < 0)
