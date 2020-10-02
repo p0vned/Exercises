@@ -8,16 +8,18 @@ namespace Exercises.Tasks
 
         public static bool Solution(int x)
         {
-            if (x < 0)
+            if (x < 0 || (x % 10 == 0 && x != 0))
                 return false;
-            
-            var numberAsString = x.ToString();
-            var numberReversed = string.Join(string.Empty, numberAsString.Reverse());
 
-            if (numberAsString.Equals(numberReversed))
-                return true;
+            int reversedNumber = 0;
 
-            return false;
+            while(x > reversedNumber)
+            {
+                reversedNumber = x % 10 + reversedNumber * 10;
+                x /= 10;
+            }
+
+            return x == reversedNumber || x == reversedNumber / 10;
         }
     }
 }
